@@ -9,7 +9,7 @@ public class CalculatorPublisher {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("service is published on URL :" + URL);
-		Endpoint.publish(URL, new Calculator());
+	//	Endpoint.publish(URL, new CalculatorWithInterface());
 	}
 
 }

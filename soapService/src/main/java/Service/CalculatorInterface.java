@@ -10,17 +10,14 @@ import javax.jws.soap.SOAPBinding.Style;
 @WebService(name="calculatorProject",portName = "calculatorPort",serviceName = "calculatorService"
 ,targetNamespace = "changeFromPackageNameToAnyThing")
 @SOAPBinding(style = Style.RPC) // here to change style fro document to RPC
-public class Calculator {
-	
+public interface CalculatorInterface {
+
 	@WebMethod
 	@WebResult(partName = "response Name")
-	public int add(@WebParam(partName = "first element") int x,int y) {
-		return x+y;
-	}
+	int add(@WebParam(partName = "first element") int x, int y);
+
 	
 	@WebMethod(exclude = true) // to make this API disappear from wsdl
-	public int multiple(int a,int b) {
-		return a*b;
-	}
+	int multiple(int a, int b);
 
 }
